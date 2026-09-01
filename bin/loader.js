@@ -12,7 +12,12 @@ program
     const options = program.opts();
     const { output } = options;
 
-    pageLoader(url, output);
+    try {
+      await pageLoader(url, output);
+    } catch (error) {
+      console.error(error.message);
+      process.exitCode = 1;
+    }
   });
 
 program.parse();
