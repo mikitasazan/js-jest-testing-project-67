@@ -14,7 +14,8 @@ program
     const { output } = options;
 
     try {
-      await pageLoader(url, output);
+      const { filepath } = await pageLoader(url, output);
+      console.log(filepath);
     } catch (error) {
       console.error(error.message);
       process.exitCode = 1;
