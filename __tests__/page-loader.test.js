@@ -39,7 +39,10 @@ describe(pageLoader, () => {
       .get('/assets/scripts.js')
       .reply(200, await readFile(`${filesDir}/localhost-assets-scripts.js`));
 
-    await pageLoader('http://localhost/blog/about', dirPath);
+    const result = await pageLoader('http://localhost/blog/about', dirPath);
+    expect(result).toEqual({
+      filepath: `${dirPath}/localhost-blog-about.html`,
+    });
 
     const gotHtml = await readFile(`${dirPath}/localhost-blog-about.html`, {
       encoding: 'utf8',

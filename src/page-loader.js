@@ -62,5 +62,7 @@ export const pageLoader = async (url, output) => {
 
   const filePath = `${dirname}/${pageFileName}`;
 
-  return writeFile(filePath, `${$.html()}\n`);
+  await writeFile(filePath, `${$.html()}\n`);
+
+  return { filepath: filePath };
 };
