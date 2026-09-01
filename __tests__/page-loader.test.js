@@ -2,8 +2,8 @@ import { readFile, mkdtemp } from 'node:fs/promises';
 import nock from 'nock';
 import path from 'path';
 import os from 'os';
-import { pageLoader } from '../page-loader';
-import { getDirname } from '../helpers/get-dirname';
+import { pageLoader } from '../src/page-loader';
+import { getDirname } from '../src/helpers/get-dirname';
 
 let htmlFile = null;
 let dirPath = null;
@@ -11,7 +11,7 @@ let dirPath = null;
 describe(pageLoader, () => {
   beforeAll(async () => {
     const bufferFile = await readFile(
-      getDirname('../__fixtures__/hexlet-template.html'),
+      getDirname('../../__fixtures__/hexlet-template.html'),
       { encoding: 'utf-8' }
     );
 

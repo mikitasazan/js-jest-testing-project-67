@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/KiraDev123/js-jest-testing-project-67/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/KiraDev123/js-jest-testing-project-67/actions) test",
+  "description": "page-loader: a CLI that downloads a web page to a local HTML file",
   "main": "index.js",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.8",
-    "cheerio": "^1.0.0",
     "commander": "^12.1.0"
   },
   "type": "module",
